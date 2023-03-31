@@ -10,7 +10,10 @@ let passwordCharacterNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 function writePassword() {
   
   var length = prompt("Please choose a length (Between 8-128)");
- 
+  var low =  confirm("Do you want to include lowercase")
+  var upper = confirm("Do you want to include uppercase")
+ var symbol = confirm("Do you want to include symbols")
+ var number = confirm("Do you want to include numbers")
   if (!length) {
    return
   } else  if(length > 128) {
@@ -19,7 +22,16 @@ function writePassword() {
     else if(length < 8) {
       alert("Please choose a length of at least 8 characters")
     }
-  
+  if (length >= 8) {
+   low()
+  } 
+  if (low == true) {
+    
+    upper()
+  } else {
+    
+    upper()
+  }
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;

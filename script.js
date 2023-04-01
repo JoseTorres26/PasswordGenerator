@@ -9,48 +9,64 @@ const selectedCharacters = ""
 const passLength = "0"
 // Write password to the #password input
 function writePassword() {
-  
   let length = prompt("Please choose a length (Between 8-128)");
-  let low =  confirm("Do you want to include lowercase")
-  let upper = confirm("Do you want to include uppercase")
- let symbol = confirm("Do you want to include symbols")
- let number = confirm("Do you want to include numbers")
   if (!length) {
-   return
+   return writePassword;
   } else  if(length > 128) {
     alert("please choose less than 128")
+    return;
   }
     else if(length < 8) {
       alert("Please choose a length of at least 8 characters")
+      return;
     }
+    
   if (length >= 8) {
-   low()
+    
+
+   
   } 
-  if (low = true) {
+  if (confirm("Do you want to include lowercase?") ) {
+    console.log("true");
+   
     
-    upper()
-  } else {
-    
-    upper()
+  } else  {
+    console.log("false");
+  
   }
-  if (upper = true) {
+  if (confirm("Do you want to include uppercase?")) {
+    console.log("true")
     
-    symbol()
+  
   } else {
+    console.log("false")
     
-    symbol()
   }
-  if (symbol = true) {
+  if (confirm("Do you want to include symbols?")) {
+    console.log("true");
     
-    number()
+    
   } else {
+    console.log("false")
     
-    number()
   }
+if (confirm("Do you want to include numbers?")) {
+  console.log("true");
+} else {
+  console.log("false")
+}
+   
+  
+  
+ 
+ 
+ 
+ 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 };
-writePassword()
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+var element = this.EventTarget;

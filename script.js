@@ -13,61 +13,52 @@ function writePassword() {
   if (!length) {
    return writePassword;
   } else  if(length > 128) {
-    alert("please choose less than 128")
+    alert("please choose no more than 128 characters.");
     return;
   }
     else if(length < 8) {
-      alert("Please choose a length of at least 8 characters")
+      alert("Please choose a length of at least 8 characters.");
       return;
     }
     
   if (length >= 8) {
    console.log(length);
   } 
+
   if (confirm("Do you want to include lowercase?") ) {
-    console.log("true");
-   selectedCharacters = selectedCharacters.concat(passwordCharacterLow)
+   selectedCharacters = selectedCharacters.concat(passwordCharacterLow);
     console.log(selectedCharacters);
-  } else  {
-    console.log("false");
-  
-  }
-  if (confirm("Do you want to include uppercase?")) {
-    console.log("true")
-   selectedCharacters = selectedCharacters.concat(passwordCharacterUp)
-    console.log(selectedCharacters);
-  } else {
-    console.log("false")
-    
-  }
-  if (confirm("Do you want to include symbols?")) {
-    console.log("true");
-   selectedCharacters = selectedCharacters.concat(passwordCharacterSym)
-    console.log(selectedCharacters);
-  } else {
-    console.log("false")
-    
   } 
+
+  if (confirm("Do you want to include uppercase?")) {
+   selectedCharacters = selectedCharacters.concat(passwordCharacterUp);
+    console.log(selectedCharacters);
+  }
+
+  if (confirm("Do you want to include symbols?")) {
+   selectedCharacters = selectedCharacters.concat(passwordCharacterSym);
+    console.log(selectedCharacters);
+  } 
+
   if (confirm("Do you want to include numbers?")) {
-  console.log("true");
-  selectedCharacters = selectedCharacters.concat(passwordCharacterNum)
+  selectedCharacters = selectedCharacters.concat(passwordCharacterNum);
   console.log(selectedCharacters);
-} else {
-  console.log("false")
-}    
-let passLength = Number(length);
-    console.log(passLength);
-function generatePassword() {
-  for (let i = 0; i < passLength; i++) {
-    const pass = selectedCharacters[Math.floor(Math.random() * passLength)];
      }
-     console.log(generatePassword());
-    };
-  
+     function generatePassword(){
+      let passLength = Number(length);
+      let passRand = "";
+      for (let i = 0; i < passLength; i++) {
+        passRand += selectedCharacters[Math.floor(Math.random()*selectedCharacters.length)];
+      }
+      return passRand;
+    }
+    generatePassword()
+    
+
   var password = generatePassword()
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-};
+  }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 var element = this.EventTarget;

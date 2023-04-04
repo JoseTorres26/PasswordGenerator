@@ -4,4 +4,4 @@ Started challenge by adding variables(const characters) and set up first prompt.
 
 file:///C:/Users/andres/Documents/UCF/homework/passWordGenerator/PasswordGenerator/index.html
 
-image.png
+[password generator picture](https://user-images.githubusercontent.com/128413413/229932651-2f8dc976-f83d-404d-bb89-fee318e2dc66.png)

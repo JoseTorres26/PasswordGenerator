@@ -24,25 +24,29 @@ function writePassword() {
   if (length >= 8) {
    console.log(length);
   } 
-
-  if (confirm("Do you want to include lowercase?") ) {
+low = confirm("Do you want to include lowercase?")
+  if (low) {
    selectedCharacters = selectedCharacters.concat(passwordCharacterLow);
     console.log(selectedCharacters);
   } 
-
-  if (confirm("Do you want to include uppercase?")) {
+up = confirm("Do you want to include uppercase?")
+  if (up) {
    selectedCharacters = selectedCharacters.concat(passwordCharacterUp);
     console.log(selectedCharacters);
   }
-
-  if (confirm("Do you want to include symbols?")) {
+sym = confirm("Do you want to include symbols?")
+  if (sym) {
    selectedCharacters = selectedCharacters.concat(passwordCharacterSym);
     console.log(selectedCharacters);
   } 
-
-  if (confirm("Do you want to include numbers?")) {
+num = confirm("Do you want to include numbers?")
+  if (num) {
   selectedCharacters = selectedCharacters.concat(passwordCharacterNum);
   console.log(selectedCharacters);
+     }
+     if ((!low) && (!up) && (!sym) && (!num)){
+      alert("please use something")
+      return
      }
      function generatePassword(){
       let passLength = Number(length);
@@ -52,12 +56,14 @@ function writePassword() {
       }
       return passRand;
     }
+
     generatePassword()
     
 
   var password = generatePassword()
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+  selectedCharacters = [""]
   }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

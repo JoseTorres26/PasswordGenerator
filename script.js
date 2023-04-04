@@ -5,7 +5,7 @@ const passwordCharacterLow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", 
 const passwordCharacterUp = ["A", "B" ,"C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Q", "P", "Q", "R", "S", "T", "U", "'V", "W", "X", "Y", "Z"];
 const passwordCharacterSym = ["~", "`","!"," @", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", "|", "\ ", ":", ";","'", "<", ",", ">", ".", "?", "/"];
 const passwordCharacterNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-const selectedCharacters = ["0"]
+let selectedCharacters = [""]
 
 // Write password to the #password input
 function writePassword() {
@@ -26,7 +26,7 @@ function writePassword() {
   } 
   if (confirm("Do you want to include lowercase?") ) {
     console.log("true");
-   selectedCharacters.concat(passwordCharacterLow)
+   selectedCharacters = selectedCharacters.concat(passwordCharacterLow)
     console.log(selectedCharacters);
   } else  {
     console.log("false");
@@ -34,7 +34,7 @@ function writePassword() {
   }
   if (confirm("Do you want to include uppercase?")) {
     console.log("true")
-    selectedCharacters.concat(passwordCharacterUp)
+   selectedCharacters = selectedCharacters.concat(passwordCharacterUp)
     console.log(selectedCharacters);
   } else {
     console.log("false")
@@ -42,7 +42,7 @@ function writePassword() {
   }
   if (confirm("Do you want to include symbols?")) {
     console.log("true");
-    selectedCharacters.concat(passwordCharacterSym)
+   selectedCharacters = selectedCharacters.concat(passwordCharacterSym)
     console.log(selectedCharacters);
   } else {
     console.log("false")
@@ -50,7 +50,7 @@ function writePassword() {
   } 
   if (confirm("Do you want to include numbers?")) {
   console.log("true");
-  selectedCharacters.concat(passwordCharacterNum)
+  selectedCharacters = selectedCharacters.concat(passwordCharacterNum)
   console.log(selectedCharacters);
 } else {
   console.log("false")
